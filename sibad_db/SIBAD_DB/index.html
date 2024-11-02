@@ -1,0 +1,398 @@
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <script>
+        function handleClick(section) {
+            document.getElementById('content').innerHTML = document.getElementById(section).innerHTML;
+        }
+
+        function logout() {
+            alert('Logging out...');
+        }
+    </script>
+</head>
+<body class="bg-red-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="w-64 bg-pink-500 h-screen shadow-md">
+            <div class="p-4">
+                <img alt="University Logo" class="mb-4" height="50" src="unpam.jpg" width="50"/>
+                <h1 class="text-lg font-bold text-black">UNIVERSITAS PAMULANG</h1>
+                <p class="mt-2 text-black">Welcome,</p>
+                <p class="font-bold text-black">Siti Badriah</p>
+                <p class="text-black">Administrator</p>
+            </div>
+            <nav class="mt-6">
+                <ul>
+                    <li class="mb-2">
+                        <a class="flex items-center p-2 text-black-700 bg-blue-100 rounded-md cursor-pointer" onclick="handleClick('Dashboard')">
+                            <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <p class="text-black-600 font-bold px-2">MENU KARYAWAN</p>
+                    </li>
+                    <li class="mb-2">
+                        <a class="flex items-center p-2 text-black-700 hover:bg-gray-200 rounded-md cursor-pointer" onclick="handleClick('Karyawan')">
+                            <i class="fas fa-users mr-2"></i> Karyawan
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a class="flex items-center p-2 text-black-700 hover:bg-gray-200 rounded-md cursor-pointer" onclick="handleClick('Jabatan')">
+                            <i class="fas fa-briefcase mr-2"></i> Jabatan
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a class="flex items-center p-2 text-black-700 hover:bg-gray-200 rounded-md cursor-pointer" onclick="handleClick('Divisi')">
+                            <i class="fas fa-building mr-2"></i> Divisi
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <p class="text-black-600 font-bold px-2">MENU ABSENSI</p>
+                    </li>
+                    <li class="mb-2">
+                        <a class="flex items-center p-2 text-black-700 hover:bg-gray-200 rounded-md cursor-pointer" onclick="handleClick('Absensi')">
+                            <i class="fas fa-calendar-check mr-2"></i> Absensi
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a class="flex items-center p-2 text-black-700 hover:bg-gray-200 rounded-md cursor-pointer" onclick="handleClick('Izin')">
+                            <i class="fas fa-calendar-times mr-2"></i> Izin
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a class="flex items-center p-2 text-black-700 hover:bg-gray-200 rounded-md cursor-pointer" onclick="handleClick('Lembur')">
+                            <i class="fas fa-clock mr-2"></i> Lembur
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="p-4">
+                <button class="w-full bg-red-500 text-black py-2 rounded-md" onclick="logout()">
+                    <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                </button>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="flex-1">
+            <!-- Header -->
+<div class="bg-pink-600 p-4 flex justify-between items-center">
+    <button class="text-white">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="flex items-center">
+        <img src="sibad.jpeg" alt="User  Avatar" class="h-10 w-10 rounded-full mr-2"/> <!-- Ganti URL_GAMBAR dengan URL gambar Anda -->
+        <p class="text-black">Welcome, Siti Badriah</p>
+    </div>
+    <i class="fas fa-user text-white"></i>
+</div>
+            <!-- Dashboard Content -->
+            <div class="p-6" id="content">
+                <div class="bg-pink-500 text-black p-4 rounded-md mb-6">
+                    <h2 class="text-xl font-bold">Sistem Informasi Manajemen Karyawan</h2>
+                    <p>Admin Dashboard</p>
+                </div>
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded-md shadow-md flex items-center justify-between">
+                        <div>
+                            <p class="text-black-600">Total Karyawan</p>
+                            <p class="text-2xl font-bold">5</p>
+                        </div>
+                        <i class="fas fa-users text-2xl text-gray-600"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-md shadow-md flex items-center justify-between">
+                        <div>
+                            <p class="text-black-600">Hadir Hari Ini</p>
+                            <p class="text-2xl font-bold">3</p>
+                        </div>
+                        <i class="fas fa-calendar-check text-2xl text-gray-600"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-md shadow-md flex items-center justify-between">
+                        <div>
+                            <p class="text-black-600">Izin/Cuti</p>
+                            <p class="text-2xl font-bold">2</p>
+                        </div>
+                        <i class="fas fa-file-alt text-2xl text-gray-600"></i>
+                    </div>
+                    <div class="bg-white p-4 rounded-md shadow-md flex items-center justify-between">
+                        <div>
+                            <p class="text-black-600">Lembur</p>
+                            <p class="text-2xl font-bold">2</p>
+                        </div>
+                        <i class="fas fa-clock text-2xl text-gray-600"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Karyawan Content -->
+            <div class="hidden" id="Karyawan">
+                <div class="bg-pink-500 text-black p-4 rounded-md mb-6">
+                    <h2 class="text-xl font-bold">Data Karyawan</h2>
+                </div>
+                <div class="bg-white p-4 rounded-md shadow-md">
+                    <table class="min-w-full bg-white">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 border-b">No</th>
+                                <th class="py-2 px-4 border-b">Nama</th>
+                                <th class="py-2 px-4 border-b">Jabatan</th>
+                                <th class="py-2 px-4 border-b">Divisi</th>
+                                <th class="py-2 px-4 border-b">Gaji</th>
+                                <th class="py-2 px-4 border-b">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border-b">1</td>
+                                <td class="py-2 px-4 border-b">Komariyah Astuti</td>
+                                <td class="py-2 px-4 border-b">Manager</td>
+                                <td class="py-2 px-4 border-b">Keuangan</td>
+                                <td class="py-2 px-4 border-b">Rp 10,000,000</td>
+                                <td class="py-2 px-4 border-b">Aktif</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">2</td>
+                                <td class="py-2 px-4 border-b">Supiyati Yeyet</td>
+                                <td class="py-2 px-4 border-b">Staff</td>
+                                <td class="py-2 px-4 border-b">HRD</td>
+                                <td class="py-2 px-4 border-b">Rp 5,000,000</td>
+                                <td class="py-2 px-4 border-b">Aktif</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">3</td>
+                                <td class="py-2 px-4 border-b">Mejikom wati</td>
+                                <td class="py-2 px-4 border-b">Supervisor</td>
+                                <td class="py-2 px-4 border-b">Marketing</td>
+                                <td class="py-2 px-4 border-b">Rp 7,000,000</td>
+                                <td class="py-2 px-4 border-b">Aktif</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">4</td>
+                                <td class="py-2 px-4 border-b">Galon Aliya</td>
+                                <td class="py-2 px-4 border-b">Analyst</td>
+                                <td class="py-2 px-4 border-b">IT</td>
+                                <td class="py-2 px-4 border-b">Rp 8,000,000</td>
+                                <td class="py-2 px-4 border-b">Aktif</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">5</td>
+                                <td class="py-2 px-4 border-b">Lemari Haris</td>
+                                <td class="py-2 px-4 border-b">Engineer</td>
+                                <td class="py-2 px-4 border-b">Teknik</td>
+                                <td class="py-2 px-4 border-b">Rp 9,000,000</td>
+                                <td class="py-2 px-4 border-b">Aktif</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Jabatan Content -->
+            <div class="hidden" id="Jabatan">
+                <div class="bg-pink-500 text-black p-4 rounded-md mb-6">
+                    <h2 class="text-xl font-bold">Data Jabatan</h2>
+                </div>
+                <div class="bg-white p-4 rounded-md shadow-md">
+                    <table class="min-w-full bg-white">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 border-b">No</th>
+                                <th class="py-2 px-4 border-b">Nama Jabatan</th>
+                                <th class="py-2 px-4 border-b">Deskripsi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border-b">1</td>
+                                <td class="py-2 px-4 border-b">Manager</td>
+                                <td class="py-2 px-4 border-b">Bertanggung jawab atas pengelolaan dan pengawasan seluruh kegiatan di divisi tertentu.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">2</td>
+                                <td class="py-2 px-4 border-b">Staff</td>
+                                <td class="py-2 px-4 border-b">Melaksanakan tugas-tugas administratif dan operasional di divisi tertentu.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">3</td>
+                                <td class="py-2 px-4 border-b">Supervisor</td>
+                                <td class="py-2 px-4 border-b">Mengawasi dan mengkoordinasikan kegiatan operasional sehari-hari di divisi tertentu.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">4</td>
+                                <td class="py-2 px-4 border-b">Analyst</td>
+                                <td class="py-2 px-4 border-b">Menganalisis data dan memberikan rekomendasi berdasarkan hasil analisis tersebut.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">5</td>
+                                <td class="py-2 px-4 border-b">Engineer</td>
+                                <td class="py-2 px-4 border-b">Merancang, mengembangkan, dan memelihara sistem teknis dan infrastruktur.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Divisi Content -->
+            <div class="hidden" id="Divisi">
+                <div class="bg-pink-500 text-black p-4 rounded-md mb-6">
+                    <h2 class="text-xl font-bold">Data Divisi</h2>
+                </div>
+                <div class="bg-white p-4 rounded-md shadow-md">
+                    <table class="min-w-full bg-white">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 border-b">No</th>
+                                <th class="py-2 px-4 border-b">Nama Divisi</th>
+                                <th class="py-2 px-4 border-b">Deskripsi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border-b">1</td>
+                                <td class="py-2 px-4 border-b">Keuangan</td>
+                                <td class="py-2 px-4 border-b">Mengelola keuangan perusahaan, termasuk perencanaan, pengelolaan, dan pelaporan keuangan.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">2</td>
+                                <td class="py-2 px-4 border-b">HRD</td>
+                                <td class="py-2 px-4 border-b">Mengelola sumber daya manusia, termasuk rekrutmen, pelatihan, dan pengembangan karyawan.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">3</td>
+                                <td class="py-2 px-4 border-b">Marketing</td>
+                                <td class="py-2 px-4 border-b">Mengelola kegiatan pemasaran dan promosi untuk meningkatkan penjualan dan brand awareness.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">4</td>
+                                <td class="py-2 px-4 border-b">IT</td>
+                                <td class="py-2 px-4 border-b">Mengelola sistem informasi dan teknologi perusahaan, termasuk pengembangan dan pemeliharaan sistem.</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">5</td>
+                                <td class="py-2 px-4 border-b">Teknik</td>
+                                <td class="py-2 px-4 border-b">Mengelola kegiatan teknis dan operasional, termasuk perawatan dan perbaikan infrastruktur.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Absensi Content -->
+            <div class="hidden" id="Absensi">
+                <div class="bg-pink-500 text-black p-4 rounded-md mb-6">
+                    <h2 class="text-xl font-bold">Data Absensi</h2>
+                </div>
+                <div class="bg-white p-4 rounded-md shadow-md">
+                    <table class="min-w-full bg-white">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 border-b">No</th>
+                                <th class="py-2 px-4 border-b">Nama</th>
+                                <th class="py-2 px-4 border-b">Tanggal</th>
+                                <th class="py-2 px-4 border-b">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border-b">1</td>
+                                <td class="py-2 px-4 border-b">Komariyah Astuti</td>
+                                <td class="py-2 px-4 border-b">2023-10-01</td>
+                                <td class="py-2 px-4 border-b">Izin</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">2</td>
+                                <td class="py-2 px-4 border-b">Supiyati Yeyet</td>
+                                <td class="py-2 px-4 border-b">2023-10-01</td>
+                                <td class="py-2 px-4 border-b">Hadir</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">3</td>
+                                <td class="py-2 px-4 border-b">Menjikom Wati</td>
+                                <td class="py-2 px-4 border-b">2023-10-01</td>
+                                <td class="py-2 px-4 border-b">Izin</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">4</td>
+                                <td class="py-2 px-4 border-b">Galon Aliya</td>
+                                <td class="py-2 px-4 border-b">2023-10-01</td>
+                                <td class="py-2 px-4 border-b">Hadir</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4 border-b">5</td>
+                                <td class="py-2 px-4 border-b">Lemari Haris</td>
+                                <td class="py-2 px-4 border-b">2023-10-01</td>
+                                <td class="py-2 px-4 border-b">Hadir</td>
+                            </tr>
+                        </tbody> 
+                    </table>
+                </div>
+            </div>
+            <!-- Izin Content -->
+<div class="hidden" id="Izin">
+    <div class="bg-pink-500 text-black p-4 rounded-md mb-6">
+        <h2 class="text-xl font-bold">Data Izin</h2>
+    </div>
+    <div class="bg-white p-4 rounded-md shadow-md">
+        <table class="min-w-full bg-white">
+            <thead>
+                <tr>
+                    <th class="py-2 px-4 border-b">No</th>
+                    <th class="py-2 px-4 border-b">Nama</th>
+                    <th class="py-2 px-4 border-b">Tanggal</th>
+                    <th class="py-2 px-4 border-b">Alasan</th>
+                    <th class="py-2 px-4 border-b">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="py-2 px-4 border-b">1</td>
+                    <td class="py-2 px-4 border-b">Supiyati Yeyet</td>
+                    <td class="py-2 px-4 border-b">2023-10-01</td>
+                    <td class="py-2 px-4 border-b">Sakit</td>
+                    <td class="py-2 px-4 border-b">Disetujui</td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">2</td>
+                    <td class="py-2 px-4 border-b">Galon Aliya</td>
+                    <td class="py-2 px-4 border-b">2023-10-03</td>
+                    <td class="py-2 px-4 border-b">cuti tahunan </td>
+                    <td class="py-2 px-4 border-b">Disetujui</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Lembur Content -->
+<div class="hidden" id="Lembur">
+    <div class="bg-pink-500 text-black p-4 rounded-md mb-6">
+        <h2 class="text-xl font-bold">Data Lembur</h2>
+    </div>
+    <div class="bg-white p-4 rounded-md shadow-md">
+        <table class="min-w-full bg-white">
+            <thead>
+                <tr>
+                    <th class="py-2 px-4 border-b">No</th>
+                    <th class="py-2 px-4 border-b">Nama</th>
+                    <th class="py-2 px-4 border-b">Tanggal</th>
+                    <th class="py-2 px-4 border-b">Jam Lembur</th>
+                    <th class="py-2 px-4 border-b">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">1</td>
+                    <td class="py-2 px-4 border-b">Komariyah Astuti</td>
+                    <td class="py-2 px-4 border-b">2023-10-02</td>
+                    <td class="py-2 px-4 border-b">3 Jam</td>
+                    <td class="py-2 px-4 border-b">diisetujui</td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">5</td>
+                    <td class="py-2 px-4 border-b">Lemari Haris</td>
+                    <td class="py-2 px-4 border-b">2023-10-02</td>
+                    <td class="py-2 px-4 border-b">2 Jam</td>
+                    <td class="py-2 px-4 border-b">Disetujui</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
